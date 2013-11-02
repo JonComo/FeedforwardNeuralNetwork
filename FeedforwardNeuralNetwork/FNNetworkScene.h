@@ -1,14 +1,13 @@
 //
-//  FNViewController.h
+//  FNNetworkScene.h
 //  FeedforwardNeuralNetwork
 //
-
+//  Created by Jon Como on 11/2/13.
 //  Copyright (c) 2013 Jon Como. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface FNViewController : UIViewController
+@interface FNNetworkScene : SKScene
 
 @end

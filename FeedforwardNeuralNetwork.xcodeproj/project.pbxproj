@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		866469341824C962003F6EF2 /* FNCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866469331824C962003F6EF2 /* FNCreateViewController.m */; };
+		866469381824CC0A003F6EF2 /* JCMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 866469371824CC0A003F6EF2 /* JCMath.m */; };
+		8664693B1824CCED003F6EF2 /* FNNetworkScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8664693A1824CCED003F6EF2 /* FNNetworkScene.m */; };
 		86EBCFDC1824BE5E00A6C9EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDB1824BE5E00A6C9EF /* Foundation.framework */; };
 		86EBCFDE1824BE5E00A6C9EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDD1824BE5E00A6C9EF /* CoreGraphics.framework */; };
 		86EBCFE01824BE5E00A6C9EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDF1824BE5E00A6C9EF /* UIKit.framework */; };
@@ -15,15 +18,15 @@
 		86EBCFEA1824BE5E00A6C9EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBCFE91824BE5E00A6C9EF /* main.m */; };
 		86EBCFEE1824BE5E00A6C9EF /* FNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBCFED1824BE5E00A6C9EF /* FNAppDelegate.m */; };
 		86EBCFF11824BE5E00A6C9EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86EBCFEF1824BE5E00A6C9EF /* Main.storyboard */; };
-		86EBCFF41824BE5E00A6C9EF /* FNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBCFF31824BE5E00A6C9EF /* FNViewController.m */; };
-		86EBCFF71824BE5E00A6C9EF /* FNMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBCFF61824BE5E00A6C9EF /* FNMyScene.m */; };
-		86EBCFF91824BE5E00A6C9EF /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EBCFF81824BE5E00A6C9EF /* Spaceship.png */; };
 		86EBCFFB1824BE5E00A6C9EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86EBCFFA1824BE5E00A6C9EF /* Images.xcassets */; };
 		86EBD0021824BE5E00A6C9EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBD0011824BE5E00A6C9EF /* XCTest.framework */; };
 		86EBD0031824BE5E00A6C9EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDB1824BE5E00A6C9EF /* Foundation.framework */; };
 		86EBD0041824BE5E00A6C9EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDF1824BE5E00A6C9EF /* UIKit.framework */; };
 		86EBD00C1824BE5E00A6C9EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86EBD00A1824BE5E00A6C9EF /* InfoPlist.strings */; };
 		86EBD00E1824BE5E00A6C9EF /* FeedforwardNeuralNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBD00D1824BE5E00A6C9EF /* FeedforwardNeuralNetworkTests.m */; };
+		86EBD0191824BECD00A6C9EF /* FNNeuron.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBD0181824BECD00A6C9EF /* FNNeuron.m */; };
+		86EBD01C1824BF0B00A6C9EF /* FNNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBD01B1824BF0B00A6C9EF /* FNNetwork.m */; };
+		86EBD0231824C2A900A6C9EF /* FNConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBD0221824C2A900A6C9EF /* FNConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		866469321824C962003F6EF2 /* FNCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNCreateViewController.h; sourceTree = "<group>"; };
+		866469331824C962003F6EF2 /* FNCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNCreateViewController.m; sourceTree = "<group>"; };
+		866469361824CC0A003F6EF2 /* JCMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCMath.h; sourceTree = "<group>"; };
+		866469371824CC0A003F6EF2 /* JCMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCMath.m; sourceTree = "<group>"; };
+		866469391824CCED003F6EF2 /* FNNetworkScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNetworkScene.h; sourceTree = "<group>"; };
+		8664693A1824CCED003F6EF2 /* FNNetworkScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNetworkScene.m; sourceTree = "<group>"; };
 		86EBCFD81824BE5E00A6C9EF /* FeedforwardNeuralNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedforwardNeuralNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EBCFDB1824BE5E00A6C9EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86EBCFDD1824BE5E00A6C9EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,17 +58,18 @@
 		86EBCFEC1824BE5E00A6C9EF /* FNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNAppDelegate.h; sourceTree = "<group>"; };
 		86EBCFED1824BE5E00A6C9EF /* FNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNAppDelegate.m; sourceTree = "<group>"; };
 		86EBCFF01824BE5E00A6C9EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		86EBCFF21824BE5E00A6C9EF /* FNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNViewController.h; sourceTree = "<group>"; };
-		86EBCFF31824BE5E00A6C9EF /* FNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNViewController.m; sourceTree = "<group>"; };
-		86EBCFF51824BE5E00A6C9EF /* FNMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FNMyScene.h; sourceTree = "<group>"; };
-		86EBCFF61824BE5E00A6C9EF /* FNMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FNMyScene.m; sourceTree = "<group>"; };
-		86EBCFF81824BE5E00A6C9EF /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		86EBCFFA1824BE5E00A6C9EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		86EBD0001824BE5E00A6C9EF /* FeedforwardNeuralNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedforwardNeuralNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EBD0011824BE5E00A6C9EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		86EBD0091824BE5E00A6C9EF /* FeedforwardNeuralNetworkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedforwardNeuralNetworkTests-Info.plist"; sourceTree = "<group>"; };
 		86EBD00B1824BE5E00A6C9EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		86EBD00D1824BE5E00A6C9EF /* FeedforwardNeuralNetworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedforwardNeuralNetworkTests.m; sourceTree = "<group>"; };
+		86EBD0171824BECD00A6C9EF /* FNNeuron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNeuron.h; sourceTree = "<group>"; };
+		86EBD0181824BECD00A6C9EF /* FNNeuron.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNeuron.m; sourceTree = "<group>"; };
+		86EBD01A1824BF0B00A6C9EF /* FNNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNetwork.h; sourceTree = "<group>"; };
+		86EBD01B1824BF0B00A6C9EF /* FNNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNetwork.m; sourceTree = "<group>"; };
+		86EBD0211824C2A900A6C9EF /* FNConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConnection.h; sourceTree = "<group>"; };
+		86EBD0221824C2A900A6C9EF /* FNConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		866469351824C96A003F6EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				866469321824C962003F6EF2 /* FNCreateViewController.h */,
+				866469331824C962003F6EF2 /* FNCreateViewController.m */,
+				866469391824CCED003F6EF2 /* FNNetworkScene.h */,
+				8664693A1824CCED003F6EF2 /* FNNetworkScene.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		86EBCFCF1824BE5E00A6C9EF = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +130,8 @@
 		86EBCFDA1824BE5E00A6C9EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				866469361824CC0A003F6EF2 /* JCMath.h */,
+				866469371824CC0A003F6EF2 /* JCMath.m */,
 				86EBCFDB1824BE5E00A6C9EF /* Foundation.framework */,
 				86EBCFDD1824BE5E00A6C9EF /* CoreGraphics.framework */,
 				86EBCFDF1824BE5E00A6C9EF /* UIKit.framework */,
@@ -124,11 +147,8 @@
 				86EBCFEC1824BE5E00A6C9EF /* FNAppDelegate.h */,
 				86EBCFED1824BE5E00A6C9EF /* FNAppDelegate.m */,
 				86EBCFEF1824BE5E00A6C9EF /* Main.storyboard */,
-				86EBCFF21824BE5E00A6C9EF /* FNViewController.h */,
-				86EBCFF31824BE5E00A6C9EF /* FNViewController.m */,
-				86EBCFF51824BE5E00A6C9EF /* FNMyScene.h */,
-				86EBCFF61824BE5E00A6C9EF /* FNMyScene.m */,
-				86EBCFF81824BE5E00A6C9EF /* Spaceship.png */,
+				866469351824C96A003F6EF2 /* View */,
+				86EBD01D1824BF1200A6C9EF /* Network */,
 				86EBCFFA1824BE5E00A6C9EF /* Images.xcassets */,
 				86EBCFE41824BE5E00A6C9EF /* Supporting Files */,
 			);
@@ -162,6 +182,19 @@
 				86EBD00A1824BE5E00A6C9EF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86EBD01D1824BF1200A6C9EF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				86EBD01A1824BF0B00A6C9EF /* FNNetwork.h */,
+				86EBD01B1824BF0B00A6C9EF /* FNNetwork.m */,
+				86EBD0171824BECD00A6C9EF /* FNNeuron.h */,
+				86EBD0181824BECD00A6C9EF /* FNNeuron.m */,
+				86EBD0211824C2A900A6C9EF /* FNConnection.h */,
+				86EBD0221824C2A900A6C9EF /* FNConnection.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +276,6 @@
 			files = (
 				86EBCFE81824BE5E00A6C9EF /* InfoPlist.strings in Resources */,
 				86EBCFFB1824BE5E00A6C9EF /* Images.xcassets in Resources */,
-				86EBCFF91824BE5E00A6C9EF /* Spaceship.png in Resources */,
 				86EBCFF11824BE5E00A6C9EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,8 +297,12 @@
 			files = (
 				86EBCFEE1824BE5E00A6C9EF /* FNAppDelegate.m in Sources */,
 				86EBCFEA1824BE5E00A6C9EF /* main.m in Sources */,
-				86EBCFF71824BE5E00A6C9EF /* FNMyScene.m in Sources */,
-				86EBCFF41824BE5E00A6C9EF /* FNViewController.m in Sources */,
+				866469341824C962003F6EF2 /* FNCreateViewController.m in Sources */,
+				86EBD01C1824BF0B00A6C9EF /* FNNetwork.m in Sources */,
+				866469381824CC0A003F6EF2 /* JCMath.m in Sources */,
+				86EBD0231824C2A900A6C9EF /* FNConnection.m in Sources */,
+				86EBD0191824BECD00A6C9EF /* FNNeuron.m in Sources */,
+				8664693B1824CCED003F6EF2 /* FNNetworkScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +513,7 @@
 				86EBD0131824BE5E00A6C9EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86EBD0141824BE5E00A6C9EF /* Build configuration list for PBXNativeTarget "FeedforwardNeuralNetworkTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +522,7 @@
 				86EBD0161824BE5E00A6C9EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
