@@ -28,7 +28,7 @@
         inputL = [FNNeuron neuron];
         inputR = [FNNeuron neuron];
         
-        network = [[FNNetwork alloc] initWithLayers:4 inputs:@[inputL, inputR] outputs:@[[FNNeuron neuron], [FNNeuron neuron]]];
+        network = [[FNNetwork alloc] initWithLayers:4 neuronsPerLayer:4 inputs:@[inputL, inputR] outputs:@[[FNNeuron neuron], [FNNeuron neuron]]];
         
         NSTimer *run;
         run = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(run) userInfo:nil repeats:YES];

@@ -39,6 +39,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)nextGeneration:(id)sender {
+    FNAntScene *antScene = (FNAntScene *)currentScene;
+    [antScene nextGeneration];
+}
+
 - (IBAction)randomizeWeights:(id)sender
 {
     FNAntScene *antScene = (FNAntScene *)currentScene;

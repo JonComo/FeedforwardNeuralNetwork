@@ -14,7 +14,7 @@
 
 @implementation FNAntScene
 {
-    FNAnt *antDragging;
+    SKNode *nodeDragging;
     FNAnt *lastSelected;
     
     BOOL didDrag;
@@ -23,6 +23,9 @@
     SKSpriteNode *networkRender;
     
     SKSpriteNode *target;
+    SKSpriteNode *spawn;
+    
+    CGPoint leadingPoint;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -38,24 +41,55 @@
         networkRender.position = CGPointMake(50, 50);
         [self addChild:networkRender];
         
+        spawn = [[SKSpriteNode alloc] initWithColor:[UIColor greenColor] size:CGSizeMake(40, 40)];
+        spawn.position = CGPointMake(self.size.width/2, 100);
+        [self addChild:spawn];
+        
         target = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
         
-        target.position = CGPointMake(size.width/2, size.height/2);
-        
+        target.position = CGPointMake(size.width/2, size.height/2 + 200);
         [self addChild:target];
         
-        NSTimer *waveTimer;
-        waveTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(nextWave) userInfo:nil repeats:YES];
+        target.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:target.size.width/2];
         
-        [self spawnAntsCount:30 position:[self randomSpawnPoint]];
+        target.physicsBody.mass = 10;
+        target.physicsBody.restitution = 0.8;
+        [target.physicsBody setDynamic:NO];
+        
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0, 0, self.size.width, self.size.height)];
+        
+//        NSTimer *waveTimer;
+//        waveTimer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(nextGeneration) userInfo:nil repeats:YES];
+        
+        for (int i = 0; i<2; i++)
+        {
+            SKSpriteNode *wall = [self addWallAtRect:CGRectMake(self.size.width/2, 300, 200, 20)];
+            
+            wall.zRotation = (float)(arc4random()%360) * M_PI/180;
+        }
+        
+        [self spawnAntsCount:25 position:[self randomSpawnPoint]];
     }
     
     return self;
 }
 
+-(SKSpriteNode *)addWallAtRect:(CGRect)wallRect
+{
+    SKSpriteNode *wall = [[SKSpriteNode alloc] initWithColor:[UIColor blackColor] size:wallRect.size];
+    wall.position = CGPointMake(wallRect.origin.x + wall.size.width/2, wallRect.origin.y + wall.size.height/2);
+    [self addChild:wall];
+    
+    wall.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:wall.size];
+    [wall.physicsBody setDynamic:NO];
+    wall.physicsBody.categoryBitMask = wallCategory;
+    
+    return wall;
+}
+
 -(CGPoint)randomSpawnPoint
 {
-    return CGPointMake(arc4random()%(int)self.size.width, 40);
+    return spawn.position;
 }
 
 -(void)spawnAntsCount:(int)count position:(CGPoint)point
@@ -71,7 +105,7 @@
     }
 }
 
--(void)nextWave
+-(void)nextGeneration
 {
     //get best performing ants and replicate them
     [self.ants sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -86,6 +120,8 @@
     
     NSArray *bestAnts = [self.ants subarrayWithRange:NSMakeRange(0, self.ants.count/4)];
     
+    NSInteger nextGenerationAmount = self.ants.count;
+    
     //remove all
     for (FNAnt *ant in self.ants){
         [ant removeFromParent];
@@ -94,7 +130,7 @@
     
     
     //duplicate randomly
-    for (int i = 0; i<bestAnts.count*4; i++)
+    for (int i = 0; i<nextGenerationAmount; i++)
     {
         FNAnt *parent = bestAnts[arc4random()%bestAnts.count];
         FNAnt *offspring = [parent copy];
@@ -124,7 +160,7 @@
 
 -(void)clear
 {
-    antDragging = nil;
+    nodeDragging = nil;
     lastSelected = nil;
     
     for (FNAnt *ant in self.ants){
@@ -136,6 +172,14 @@
 
 -(void)randomizeWeights
 {
+    for (SKSpriteNode *node in self.children)
+    {
+        if (node.physicsBody.categoryBitMask == wallCategory)
+        {
+            node.zRotation = (float)(arc4random()%360) * M_PI/180;
+        }
+    }
+    
     for (FNAnt *ant in self.ants){
         [ant randomizeWeights];
     }
@@ -150,7 +194,7 @@
     ant.parentScene = self;
     ant.target = target;
     
-    ant.zRotation = M_PI_2;
+    ant.zRotation = (float)(arc4random()%360) * M_PI/180;
     
     [self.ants addObject:ant];
     [self addChild:ant];
@@ -169,30 +213,15 @@
     UITouch *touch = [touches anyObject];
     CGPoint position = [touch locationInNode:self];
     
+    leadingPoint = position;
+    
     didDrag = NO;
     didCreateNew = NO;
-    antDragging = nil;
+    nodeDragging = nil;
     
-    if (self.children.count == 0)
-    {
-        antDragging = [self createAntAtPosition:position];
-    }else{
-        for (SKSpriteNode *node in self.children)
-        {
-            float dist = [JCMath distanceBetweenPoint:position andPoint:node.position sorting:NO];
-            
-            if (dist < 30){
-                //touching a node
-                antDragging = (FNAnt *)node;
-            }
-        }
-        
-        if (!antDragging)
-        {
-            antDragging = [self createAntAtPosition:position];
-            didCreateNew = YES;
-        }
-    }
+    nodeDragging = [self nodeAtPoint:position];
+    
+    if ([nodeDragging isKindOfClass:[SKScene class]]) nodeDragging = nil;
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -201,31 +230,21 @@
     CGPoint position = [touch locationInNode:self];
     
     didDrag = YES;
-    
-    if (antDragging){
-        antDragging.position = position;
-        
-        if (position.y < 20)
-        {
-            [self.ants removeObject:antDragging];
-            [antDragging removeFromParent];
-            antDragging = nil;
-            lastSelected = nil;
-        }
-    }
+
+    nodeDragging.position = position;
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!didDrag && !didCreateNew){
-        if (antDragging == lastSelected){
+        if (nodeDragging == lastSelected){
             lastSelected = nil;
         }else{
-            lastSelected = antDragging;
+            lastSelected = nodeDragging;
         }
     }
     
-    antDragging = nil;
+    nodeDragging = nil;
 }
 
 @end

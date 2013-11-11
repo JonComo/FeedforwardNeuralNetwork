@@ -37,7 +37,7 @@
     }
 }
 
--(id)initWithLayers:(int)layerCount inputs:(NSArray *)inputs outputs:(NSArray *)outputs
+-(id)initWithLayers:(int)layerCount neuronsPerLayer:(int)neuronsPerLayer inputs:(NSArray *)inputs outputs:(NSArray *)outputs
 {
     //Create layers
     
@@ -62,7 +62,7 @@
                 layer = outputs;
             }else{
                 //middle layer
-                layer = [self layerWithNumNeurons:4];
+                layer = [self layerWithNumNeurons:neuronsPerLayer];
             }
             
             [self.layers addObject:layer];
@@ -104,7 +104,7 @@
         {
             for (FNConnection *connection in neuron.connections)
             {
-                float smallChange = ((float)(arc4random()%100)/100.0f ) *0.1 - 0.05;
+                float smallChange = ((float)(arc4random()%100)/100.0f ) *0.3 - 0.15;
                 
                 connection.weight += smallChange;
             }

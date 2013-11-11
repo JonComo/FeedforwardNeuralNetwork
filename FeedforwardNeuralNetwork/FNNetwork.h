@@ -16,7 +16,7 @@
 
 +(void)transferWeightsFromNetwork:(FNNetwork *)network toNetwork:(FNNetwork *)receivingNetwork;
 
--(id)initWithLayers:(int)layerCount inputs:(NSArray *)inputs outputs:(NSArray *)outputs;
+-(id)initWithLayers:(int)layerCount neuronsPerLayer:(int)neuronsPerLayer inputs:(NSArray *)inputs outputs:(NSArray *)outputs;
 
 -(UIImage *)renderWithSize:(CGSize)size;
 

@@ -16,17 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bME-WV-Ofz" userLabel="skView" customClass="SKView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bME-WV-Ofz" userLabel="skView" customClass="SKView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQA-Np-c8c">
-                                <rect key="frame" x="0.0" y="523" width="183" height="45"/>
+                                <rect key="frame" x="0.0" y="535" width="164" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="0Yx-Mg-uU7"/>
-                                    <constraint firstAttribute="width" constant="183" id="Joe-bU-f8L"/>
+                                    <constraint firstAttribute="height" constant="33" id="eUP-9T-zA9"/>
                                 </constraints>
                                 <state key="normal" title="Randomize weights">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,11 +34,32 @@
                                     <action selector="randomizeWeights:" destination="LVB-YS-i5n" eventType="touchUpInside" id="qd9-b2-CU0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vc-O9-VgR">
+                                <rect key="frame" x="0.0" y="495" width="164" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="pow-Rz-Zzf"/>
+                                    <constraint firstAttribute="height" constant="32" id="qgz-rs-4wB"/>
+                                </constraints>
+                                <state key="normal" title="Next Generation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextGeneration:" destination="LVB-YS-i5n" eventType="touchUpInside" id="W9y-tr-VLM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uQA-Np-c8c" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="J6F-vU-GYM"/>
-                            <constraint firstAttribute="bottom" secondItem="uQA-Np-c8c" secondAttribute="bottom" id="W1Y-G6-rCY"/>
+                            <constraint firstItem="bME-WV-Ofz" firstAttribute="leading" secondItem="6vc-O9-VgR" secondAttribute="leading" id="5jI-OO-acR"/>
+                            <constraint firstItem="bME-WV-Ofz" firstAttribute="bottom" secondItem="uQA-Np-c8c" secondAttribute="bottom" id="7Im-Cl-tSn"/>
+                            <constraint firstItem="bME-WV-Ofz" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="ADI-ji-Njb"/>
+                            <constraint firstAttribute="bottom" secondItem="uQA-Np-c8c" secondAttribute="bottom" id="AyE-Ub-3fJ"/>
+                            <constraint firstItem="6vc-O9-VgR" firstAttribute="leading" secondItem="uQA-Np-c8c" secondAttribute="leading" id="FAm-b2-K9B"/>
+                            <constraint firstItem="bME-WV-Ofz" firstAttribute="top" secondItem="bdc-N1-crn" secondAttribute="top" id="OgK-vg-73C"/>
+                            <constraint firstAttribute="trailing" secondItem="bME-WV-Ofz" secondAttribute="trailing" id="aQk-JE-Wmv"/>
+                            <constraint firstItem="uQA-Np-c8c" firstAttribute="trailing" secondItem="6vc-O9-VgR" secondAttribute="trailing" id="eLP-g4-HTn"/>
+                            <constraint firstItem="uQA-Np-c8c" firstAttribute="top" secondItem="6vc-O9-VgR" secondAttribute="bottom" constant="8" symbolic="YES" id="fc0-ys-doh"/>
                         </constraints>
                     </view>
                     <connections>
