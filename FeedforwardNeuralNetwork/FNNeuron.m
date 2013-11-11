@@ -10,11 +10,20 @@
 
 @implementation FNNeuron
 
++(FNNeuron *)neuronWithFire:(FireBlock)block
+{
+    FNNeuron *neuron = [FNNeuron neuron];
+    neuron.fireBlock = block;
+    
+    return neuron;
+}
+
 +(FNNeuron *)neuron
 {
     FNNeuron *newNeuron = [[self alloc] init];
     return newNeuron;
 }
+
 
 -(id)init
 {
@@ -48,6 +57,8 @@
 
 -(void)fireWithAmplitude:(float)amplitude
 {
+    if (self.fireBlock) self.fireBlock(amplitude);
+    
     for (int i = 0; i<self.children.count; i++) {
         FNNeuron *child = self.children[i];
         FNConnection *connection = self.connections[i];

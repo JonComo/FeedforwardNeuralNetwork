@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		863BE9FA1824ED7700AEE36C /* JCMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 863BE9F91824ED7700AEE36C /* JCMath.m */; };
 		866469341824C962003F6EF2 /* FNCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866469331824C962003F6EF2 /* FNCreateViewController.m */; };
-		866469381824CC0A003F6EF2 /* JCMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 866469371824CC0A003F6EF2 /* JCMath.m */; };
 		8664693B1824CCED003F6EF2 /* FNNetworkScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8664693A1824CCED003F6EF2 /* FNNetworkScene.m */; };
+		86C047761824E4A000F33B58 /* FNAnt.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C047751824E4A000F33B58 /* FNAnt.m */; };
+		86C0477A1824E68000F33B58 /* FNAntScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C047791824E68000F33B58 /* FNAntScene.m */; };
 		86EBCFDC1824BE5E00A6C9EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDB1824BE5E00A6C9EF /* Foundation.framework */; };
 		86EBCFDE1824BE5E00A6C9EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDD1824BE5E00A6C9EF /* CoreGraphics.framework */; };
 		86EBCFE01824BE5E00A6C9EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EBCFDF1824BE5E00A6C9EF /* UIKit.framework */; };
@@ -40,12 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		863BE9F81824ED7700AEE36C /* JCMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCMath.h; sourceTree = "<group>"; };
+		863BE9F91824ED7700AEE36C /* JCMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCMath.m; sourceTree = "<group>"; };
 		866469321824C962003F6EF2 /* FNCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNCreateViewController.h; sourceTree = "<group>"; };
 		866469331824C962003F6EF2 /* FNCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNCreateViewController.m; sourceTree = "<group>"; };
-		866469361824CC0A003F6EF2 /* JCMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCMath.h; sourceTree = "<group>"; };
-		866469371824CC0A003F6EF2 /* JCMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCMath.m; sourceTree = "<group>"; };
 		866469391824CCED003F6EF2 /* FNNetworkScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNetworkScene.h; sourceTree = "<group>"; };
 		8664693A1824CCED003F6EF2 /* FNNetworkScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNetworkScene.m; sourceTree = "<group>"; };
+		86C047741824E4A000F33B58 /* FNAnt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNAnt.h; sourceTree = "<group>"; };
+		86C047751824E4A000F33B58 /* FNAnt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNAnt.m; sourceTree = "<group>"; };
+		86C047781824E68000F33B58 /* FNAntScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNAntScene.h; sourceTree = "<group>"; };
+		86C047791824E68000F33B58 /* FNAntScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNAntScene.m; sourceTree = "<group>"; };
 		86EBCFD81824BE5E00A6C9EF /* FeedforwardNeuralNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedforwardNeuralNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EBCFDB1824BE5E00A6C9EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86EBCFDD1824BE5E00A6C9EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,8 +110,19 @@
 				866469331824C962003F6EF2 /* FNCreateViewController.m */,
 				866469391824CCED003F6EF2 /* FNNetworkScene.h */,
 				8664693A1824CCED003F6EF2 /* FNNetworkScene.m */,
+				86C047781824E68000F33B58 /* FNAntScene.h */,
+				86C047791824E68000F33B58 /* FNAntScene.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		86C047771824E4A300F33B58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86C047741824E4A000F33B58 /* FNAnt.h */,
+				86C047751824E4A000F33B58 /* FNAnt.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		86EBCFCF1824BE5E00A6C9EF = {
@@ -130,8 +147,8 @@
 		86EBCFDA1824BE5E00A6C9EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				866469361824CC0A003F6EF2 /* JCMath.h */,
-				866469371824CC0A003F6EF2 /* JCMath.m */,
+				863BE9F81824ED7700AEE36C /* JCMath.h */,
+				863BE9F91824ED7700AEE36C /* JCMath.m */,
 				86EBCFDB1824BE5E00A6C9EF /* Foundation.framework */,
 				86EBCFDD1824BE5E00A6C9EF /* CoreGraphics.framework */,
 				86EBCFDF1824BE5E00A6C9EF /* UIKit.framework */,
@@ -149,6 +166,7 @@
 				86EBCFEF1824BE5E00A6C9EF /* Main.storyboard */,
 				866469351824C96A003F6EF2 /* View */,
 				86EBD01D1824BF1200A6C9EF /* Network */,
+				86C047771824E4A300F33B58 /* Model */,
 				86EBCFFA1824BE5E00A6C9EF /* Images.xcassets */,
 				86EBCFE41824BE5E00A6C9EF /* Supporting Files */,
 			);
@@ -295,11 +313,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C047761824E4A000F33B58 /* FNAnt.m in Sources */,
 				86EBCFEE1824BE5E00A6C9EF /* FNAppDelegate.m in Sources */,
+				86C0477A1824E68000F33B58 /* FNAntScene.m in Sources */,
 				86EBCFEA1824BE5E00A6C9EF /* main.m in Sources */,
+				863BE9FA1824ED7700AEE36C /* JCMath.m in Sources */,
 				866469341824C962003F6EF2 /* FNCreateViewController.m in Sources */,
 				86EBD01C1824BF0B00A6C9EF /* FNNetwork.m in Sources */,
-				866469381824CC0A003F6EF2 /* JCMath.m in Sources */,
 				86EBD0231824C2A900A6C9EF /* FNConnection.m in Sources */,
 				86EBD0191824BECD00A6C9EF /* FNNeuron.m in Sources */,
 				8664693B1824CCED003F6EF2 /* FNNetworkScene.m in Sources */,

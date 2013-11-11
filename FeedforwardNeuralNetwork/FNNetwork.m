@@ -13,6 +13,30 @@
     NSTimer *timerLoop;
 }
 
++(void)transferWeightsFromNetwork:(FNNetwork *)network toNetwork:(FNNetwork *)receivingNetwork
+{
+    for (int i = 0; i<network.layers.count; i++)
+    {
+        NSMutableArray *layer1 = network.layers[i];
+        NSMutableArray *layer2 = receivingNetwork.layers[i];
+        
+        for (int j = 0; j<layer1.count; j++)
+        {
+            FNNeuron *neuron1 = layer1[j];
+            FNNeuron *neuron2 = layer2[j];
+            
+            for (int k = 0; k<neuron1.connections.count; k++)
+            {
+                //transfer over weights
+                FNConnection *connection1 = neuron1.connections[k];
+                FNConnection *connection2 = neuron2.connections[k];
+                
+                connection2.weight = connection1.weight;
+            }
+        }
+    }
+}
+
 -(id)initWithLayers:(int)layerCount inputs:(NSArray *)inputs outputs:(NSArray *)outputs
 {
     //Create layers
@@ -72,6 +96,22 @@
     }
 }
 
+-(void)randomizeWeightsAsGeneration
+{
+    for (NSMutableArray *layer in self.layers)
+    {
+        for (FNNeuron *neuron in layer)
+        {
+            for (FNConnection *connection in neuron.connections)
+            {
+                float smallChange = ((float)(arc4random()%100)/100.0f ) *0.1 - 0.05;
+                
+                connection.weight += smallChange;
+            }
+        }
+    }
+}
+
 -(void)run
 {
     
@@ -100,22 +140,25 @@
 
 -(UIImage *)renderWithSize:(CGSize)size
 {
-    CGSize neuronSize = CGSizeMake(20, 20);
+    CGSize neuronSize = CGSizeMake(size.width/10, size.height/10);
     
     UIGraphicsBeginImageContext(size);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    float yOffset = 20;
+    float yOffset = neuronSize.height/2;
     
-    float ySpread = size.height / self.layers.count;
+    float ySpread = size.height / (self.layers.count-1) - (neuronSize.height)/(self.layers.count-1);
+    
+//    [[UIColor blueColor] setFill];
+//    CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height));
     
     //place neurons
     
     for (NSMutableArray *layer in self.layers)
     {
-        float xSpread = size.width / layer.count;
-        float xOffset = 20;
+        float xSpread = size.width / (layer.count-1) - (neuronSize.width)/(layer.count-1);
+        float xOffset = neuronSize.width/2;
         
         for (int i = 0; i<layer.count; i++)
         {

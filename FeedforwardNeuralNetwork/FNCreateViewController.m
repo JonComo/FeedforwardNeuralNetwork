@@ -8,10 +8,11 @@
 
 #import "FNCreateViewController.h"
 
-#import "FNNetworkScene.h"
+#import "FNAntScene.h"
 
 @interface FNCreateViewController ()
 {
+    __weak IBOutlet SKView *skView;
     SKScene *currentScene;
 }
 
@@ -24,20 +25,24 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    SKView *view = (SKView *)self.view;
+    skView.showsFPS = YES;
+    skView.showsNodeCount = YES;
     
-    view.showsFPS = YES;
-    view.showsNodeCount = YES;
+    currentScene = [FNAntScene sceneWithSize:skView.bounds.size];
     
-    currentScene = [FNNetworkScene sceneWithSize:view.bounds.size];
-    
-    [view presentScene:currentScene];
+    [skView presentScene:currentScene];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)randomizeWeights:(id)sender
+{
+    FNAntScene *antScene = (FNAntScene *)currentScene;
+    [antScene randomizeWeights];
 }
 
 @end

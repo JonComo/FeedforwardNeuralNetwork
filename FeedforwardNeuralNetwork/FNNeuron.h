@@ -10,16 +10,19 @@
 
 #import "FNConnection.h"
 
+typedef void (^FireBlock)(float amplitude);
+
 @interface FNNeuron : NSObject
 
+@property (nonatomic, strong) FireBlock fireBlock;
 @property CGPoint position;
-
 @property float amplitude;
 
 @property (nonatomic, strong) NSMutableArray *children;
 @property (nonatomic, strong) NSMutableArray *connections;
 
 +(FNNeuron *)neuron;
++(FNNeuron *)neuronWithFire:(FireBlock)block;
 
 -(void)receiveImpulse:(float)impulse;
 

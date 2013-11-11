@@ -14,7 +14,8 @@
 
 +(float)angleFromPoint:(CGPoint)point1 toPoint:(CGPoint)point2;
 +(double)distanceBetweenPoint:(CGPoint)point1 andPoint:(CGPoint)point2 sorting:(BOOL)sorting;
-+(CGPoint)pointFromPoint:(CGPoint)point pushedBy:(float)pushAmount inDirection:(float)degrees;
++(CGPoint)pointFromPoint:(CGPoint)point pushedBy:(float)pushAmount inDirection:(float)radians;
 +(float)mapValue:(float)value range:(CGPoint)range1 range:(CGPoint)range2;
++(int)turnAngle:(float)angle towardsDesiredAngle:(float)desiredAngle;
 
 @end

@@ -15,12 +15,40 @@
                     <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bME-WV-Ofz" userLabel="skView" customClass="SKView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQA-Np-c8c">
+                                <rect key="frame" x="0.0" y="523" width="183" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0Yx-Mg-uU7"/>
+                                    <constraint firstAttribute="width" constant="183" id="Joe-bU-f8L"/>
+                                </constraints>
+                                <state key="normal" title="Randomize weights">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomizeWeights:" destination="LVB-YS-i5n" eventType="touchUpInside" id="qd9-b2-CU0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uQA-Np-c8c" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="J6F-vU-GYM"/>
+                            <constraint firstAttribute="bottom" secondItem="uQA-Np-c8c" secondAttribute="bottom" id="W1Y-G6-rCY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="skView" destination="bME-WV-Ofz" id="USB-a7-xyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="31"/>
+            <point key="canvasLocation" x="-22" y="33"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
